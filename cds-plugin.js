@@ -1,1 +1,1 @@
-cds.add?.register?.('incidents-sample', require('lib/add'))
+cds.add?.register?.('incidents-sample', require('./lib/add'))
