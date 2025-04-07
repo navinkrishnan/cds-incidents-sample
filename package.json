@@ -5,6 +5,10 @@
   "repository": "<Add your repository here>",
   "license": "UNLICENSED",
   "private": true,
+  "peerDependencies": {
+    "@sap/cds": ">=8",
+    "@sap/cds-dk": ">=8"
+  },
   "scripts": {
     "start": "cds-serve"
   }
