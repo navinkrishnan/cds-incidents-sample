@@ -7,6 +7,9 @@
   "peerDependencies": {
     "@sap/cds-dk": ">=8"
   },
+  "dependencies": {
+    "@capire/incidents": "https://github.com/cap-js/incidents-app.git"
+  },
   "devDependencies": {
     "jest": "^29.0.0",
     "@sap/cds-dk": ">=8"
