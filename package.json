@@ -1,6 +1,6 @@
 {
   "name": "cds-incidents-sample",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A CAP cds add plugin.",
   "repository": "https://github.com/navinkrishnan/cds-incidents-sample.git",
   "license": "Apache-2.0",
