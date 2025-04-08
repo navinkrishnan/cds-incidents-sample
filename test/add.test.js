@@ -28,6 +28,10 @@ describe('Testing CDS initialization', () => {
         execSync(`npm install`, { cwd: projectFolder })
         execSync('cds add incidents-sample', { cwd: projectFolder });
 
+        execSync('cds add incidents-sample --plugin change-tracking', { cwd: projectFolder });
+        execSync('cds add incidents-sample --plugin audit-logging', { cwd: projectFolder });
+        execSync('cds add incidents-sample --plugin attachments', { cwd: projectFolder });
+
         // Check if the folder "my-incidents" was created
         const newFolder = path.join(tempFolder, 'my-incidents');
         const folderExists = fs.existsSync(newFolder) && fs.lstatSync(newFolder).isDirectory();
@@ -46,12 +50,22 @@ describe('Testing CDS initialization', () => {
         const testFile = path.join(testFolder, 'basics.test.js');
         fs.existsSync(testFile) && fs.lstatSync(testFile).isFile();
         
+        // check if the file "change-tracking.cds" exists inside the "my-incidents/srv" folder
+        const changeTrackingFile = path.join(srvFolder, 'change-tracking.cds');
+        fs.existsSync(changeTrackingFile) && fs.lstatSync(changeTrackingFile).isFile();
+        // check if the file "data-privacy.cds" exists inside the "my-incidents/srv" folder
+        const dataPrivacyFile = path.join(srvFolder, 'data-privacy.cds');
+        fs.existsSync(dataPrivacyFile) && fs.lstatSync(dataPrivacyFile).isFile();
+        // check if the file "attachments.cds" exists inside the "my-incidents/srv" folder
+        const attachmentsFile = path.join(srvFolder, 'attachments.cds');
+        fs.existsSync(attachmentsFile) && fs.lstatSync(attachmentsFile).isFile();
+
         expect(folderExists).toBe(true);
     });
 
     afterAll(() => {
         // Recursively delete the temp folder
-       fs.rmSync(tempFolder, { recursive: true, force: true });
+    //    fs.rmSync(tempFolder, { recursive: true, force: true });
     });
 
     function updateDependency(projectFolder) {
