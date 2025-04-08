@@ -4,7 +4,6 @@
   "description": "A CAP cds add plugin.",
   "repository": "https://github.com/navinkrishnan/cds-incidents-sample.git",
   "license": "Apache-2.0",
-  "private": true,
   "peerDependencies": {
     "@sap/cds-dk": ">=8"
   },
