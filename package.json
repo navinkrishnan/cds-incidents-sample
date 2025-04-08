@@ -1,14 +1,18 @@
 {
-  "name": "incidents-sample",
+  "name": "cds-incidents-sample",
   "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
-  "license": "UNLICENSED",
+  "description": "A CAP cds add plugin.",
+  "repository": "https://github.com/navinkrishnan/cds-incidents-sample.git",
+  "license": "Apache-2.0",
   "private": true,
   "peerDependencies": {
     "@sap/cds-dk": ">=8"
   },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "@sap/cds-dk": ">=8"
+  },
   "scripts": {
-    "start": "cds-serve"
+    "test": "jest --silent test/*.test.js"
   }
 }
