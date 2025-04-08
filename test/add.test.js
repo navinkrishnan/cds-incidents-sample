@@ -28,9 +28,9 @@ describe('Testing CDS initialization', () => {
         execSync(`npm install`, { cwd: projectFolder })
         execSync('cds add incidents-sample', { cwd: projectFolder });
 
-        execSync('cds add incidents-sample --plugin change-tracking', { cwd: projectFolder });
-        execSync('cds add incidents-sample --plugin audit-logging', { cwd: projectFolder });
-        execSync('cds add incidents-sample --plugin attachments', { cwd: projectFolder });
+        execSync('cds add incidents-sample --with-plugin change-tracking', { cwd: projectFolder });
+        execSync('cds add incidents-sample -pg audit-logging', { cwd: projectFolder });
+        execSync('cds add incidents-sample -pg attachments', { cwd: projectFolder });
 
         // Check if the folder "my-incidents" was created
         const newFolder = path.join(tempFolder, 'my-incidents');

@@ -7,7 +7,13 @@
 Run the following command
 
 ```sh
-cds add incidents-sample -p @navinkrishnan/cds-incidents-sample@git+https://github.com/navinkrishnan/cds-incidents-sample
+cds add incidents-sample -p cds-incidents-sample
+```
+
+To include the plugins content for demo
+
+```sh
+cds add incidents-sample -p cds-incidents-sample --plugin change-tracking
 ```
 
 ## Learn More
