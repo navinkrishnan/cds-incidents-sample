@@ -39,26 +39,26 @@ describe('Testing CDS initialization', () => {
         // check if the file "schema.cds" exists inside the "my-incidents/db" folder
         const dbFolder = path.join(projectFolder, 'db');
         const schemaFile = path.join(dbFolder, 'schema.cds');
-        fs.existsSync(schemaFile) && fs.lstatSync(schemaFile).isFile();
+        expect(fs.existsSync(schemaFile) && fs.lstatSync(schemaFile).isFile()).toBe(true);
 
         // check if the file "services.cds" exists inside the "my-incidents/srv" folder
         const srvFolder = path.join(projectFolder, 'srv');
-        const servicesFile = path.join(srvFolder, 'services.cds');
-        fs.existsSync(servicesFile) && fs.lstatSync(servicesFile).isFile();
+        const servicesFile = path.join(srvFolder, 'processor-service.cds');
+        expect(fs.existsSync(servicesFile) && fs.lstatSync(servicesFile).isFile()).toBe(true);
         // check if the file "basics.test.js" exists inside the "my-incidents/test" folder
         const testFolder = path.join(projectFolder, 'test');
         const testFile = path.join(testFolder, 'basics.test.js');
-        fs.existsSync(testFile) && fs.lstatSync(testFile).isFile();
+        expect(fs.existsSync(testFile) && fs.lstatSync(testFile).isFile()).toBe(true);
         
         // check if the file "change-tracking.cds" exists inside the "my-incidents/srv" folder
         const changeTrackingFile = path.join(srvFolder, 'change-tracking.cds');
-        fs.existsSync(changeTrackingFile) && fs.lstatSync(changeTrackingFile).isFile();
+        expect(fs.existsSync(changeTrackingFile) && fs.lstatSync(changeTrackingFile).isFile()).toBe(true);
         // check if the file "data-privacy.cds" exists inside the "my-incidents/srv" folder
         const dataPrivacyFile = path.join(srvFolder, 'data-privacy.cds');
-        fs.existsSync(dataPrivacyFile) && fs.lstatSync(dataPrivacyFile).isFile();
+        expect(fs.existsSync(dataPrivacyFile) && fs.lstatSync(dataPrivacyFile).isFile()).toBe(true);
         // check if the file "attachments.cds" exists inside the "my-incidents/srv" folder
         const attachmentsFile = path.join(srvFolder, 'attachments.cds');
-        fs.existsSync(attachmentsFile) && fs.lstatSync(attachmentsFile).isFile();
+        expect(fs.existsSync(attachmentsFile) && fs.lstatSync(attachmentsFile).isFile()).toBe(true);
 
         expect(folderExists).toBe(true);
     });
@@ -72,7 +72,7 @@ describe('Testing CDS initialization', () => {
         // write dependency in package.json
         const packageJSONPath = path.join(projectFolder, 'package.json')
         const packageJSON = JSON.parse(fs.readFileSync(packageJSONPath, 'utf8'))
-        packageJSON.devDependencies["@navinkrishnan/incidents-sample"] = "file:../../../../"
+        packageJSON.devDependencies["cds-incidents-sample"] = "file:../../../../"
         fs.writeFileSync(packageJSONPath, JSON.stringify(packageJSON, null, 4))
     }
 });
